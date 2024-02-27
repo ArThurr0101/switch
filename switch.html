@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura Switch-Case</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        img{
+            max-width: 200px;
+            max-height: 200px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Selecione o dia da semana:</h2>
+
+    <select name="" id="diaSemana" onchange="mostrarMensagem()">
+        <option value="default">Selecione um dia </option>
+        <option value="segunda">Segunda-Feira</option>
+        <option value="terça">Terça-Feira</option>
+        <option value="quarta">Quarta-Feira</option>
+        <option value="quinta">Quinta-Feira</option>
+        <option value="sexta">Sexta-Feira</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo</option>
+    </select>
+
+        <div id="mensagem"></div>
+
+        <script>
+
+            function mostrarMensagem(){
+            var select = document.getElementById('diaSemana');
+            var diaSelecionado = select.value;
+            var mensagemElemento = document.getElementById('mensagem');
+            var mensagem = "";
+            var imagem = "";
+
+            switch (diaSelecionado) {
+                case "segunda":
+                    mensagem = "Bom dia! Mais uma semana começando. ";
+                    imagem = "https://cdn.pixabay.com/photo/2024/02/23/17/26/clock-8592484_1280.jpg";
+                    break;
+                case "terça":
+                    mensagem = "Ainda faltam 3 dias pro fim de semana eba que alegria";
+                    imagem = "https://img.freepik.com/vetores-premium/emoticon-mostrando-o-polegar-para-cima-ilustracao-vetorial-legal_255498-808.jpg";
+                    break;
+                case "quarta":
+                    mensagem = "So mais dois dias, bateria social ja ta abaixo de 0";
+                    imagem = "https://i.pinimg.com/originals/9c/d9/32/9cd932744d1510df8a1753b72b7bab59.jpg";
+                    break;
+                case "quinta":
+                    mensagem = "ultimo dia da semana de aula no IOS, 12h recém almoçado, indo aos aposentos dos meus bons amigos fazendo nada";
+                    imagem = "https://i.pinimg.com/originals/9c/d9/32/9cd932744d1510df8a1753b72b7bab59.jpg";
+                    break;
+                case "sexta":
+                    mensagem = "boa, fim da semana, agora sim posso fazer o que sei fazer de melhor, deitar e dormi";
+                    imagem = "https://cdn.pixabay.com/photo/2023/12/01/15/16/red-fruits-8423880_640.jpg";
+                    break;
+                case "sabado":
+                    mensagem = "dia de ir no romeu ou ian resenha";
+                    imagem = "https://gartic.com.br/imgs/mural/ma/mangle_dark/sem-ideias.png";
+                    break;
+                case "domingo":
+                    mensagem = "ultimo dia da semana antes de recomeça novamente minha redundante semana";
+                    imagem = "https://painel.v9vitoriosa.com.br/wp-content/uploads/2022/05/post-medo-1080x540-1.jpg";
+                    break;
+                default: 
+                    mensagem = "Por favor, selecione um dia da semana.";
+                    imagem = "";
+
+                }
+
+                mensagemElemento.innerHTML = "<p>" + mensagem + "</p>";
+            if (imagem !== ""){
+                mensagemElemento.innerHTML += "<img src='" + imagem + "' alt='Imagem do dia selecionado'>";
+                }
+            }
+
+    </script>
+    
+</body>
+</html>
